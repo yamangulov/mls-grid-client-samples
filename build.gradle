@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.innedhub.example'
+version '1.0-SNAPSHOT'
+
+ext {
+    awsAccessKeyId = System.env.AWS_ACCESS_KEY_ID ?: findProperty('AWS_ACCESS_KEY_ID')
+    awsSecretAccessKey = System.env.AWS_SECRET_ACCESS_KEY ?: findProperty('AWS_SECRET_ACCESS_KEY')
+}
+
+repositories {
+    mavenCentral()
+    maven {
+
+        url 's3://repo.chichagodealvaults.org/snapshot'
+
+        credentials(AwsCredentials) {
+            accessKey = awsAccessKeyId
+            secretKey = awsSecretAccessKey
+        }
+    }
+}
+
+dependencies {
+    compile group: 'com.innedhub', name: 'mlsgrid-api-client', version: '1.0-SNAPSHOT'
+}
