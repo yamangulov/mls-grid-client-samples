@@ -34,7 +34,7 @@ public class Samples {
         URI nextPage = searchResult2.nextPage();
         //checking if next page exists
         boolean isNextPageExists = searchResult2.hasNextPage();
-        //to get result form next page with using URI
+        //to get result from next page with using URI
         SearchResult resultFromNextPage = gridClient.searchResult(nextPage);
         //or in the loop
         while(searchResult2.hasNextPage()) {
@@ -49,9 +49,9 @@ public class Samples {
         gridClient.initAmazonConnection(bucketName, region, awsAccessKey, awsSecretKey, gridClient);
         //saving images by mlsnumber
         gridClient.getAndSaveAllImages("MRD10611226");
-        //saving images by mlsnumber with top limit of their quantity
+        //saving images by mlsnumber can be limited
         gridClient.getAndSaveAllImages("MRD10611226", 4);
-        //if you need to delete certain image by its aws s3 object id
+        //if you need to delete certain image by its aws s3 object key
         AmazonS3 amazonS3 = gridClient.getAmazonS3();
         amazonS3.deleteObject(bucketName, "thumbnail_MRD10611226.jpg");
         //browsing objects in bucket
