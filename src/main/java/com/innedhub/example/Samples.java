@@ -13,12 +13,12 @@ import java.net.URI;
 import java.util.List;
 
 public class Samples {
-    private static String bucketName = "mls-grid-test-property-images-bucket";
-    private static String region = "us-west-2";
-    private static String awsAccessKey = "AKIAJB3RTOCO4PBLPN7A";
-    private static String awsSecretKey = "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";
+    private static String bucketName = "";
+    private static String region = "";
+    private static String awsAccessKey = "";
+    private static String awsSecretKey = "";
     private static String yourApiUri = "https://api.mlsgrid.com/";
-    private static String yourApiKey = "9559104ea30324a4cbe8b0b25b9b0ec6be948ca8";
+    private static String yourApiKey = "";
 
     public static void main(String[] args) {
         //initialization factory and client
